@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReMate Digital — Tecnología reacondicionada con respaldo uruguayo</title>
+<meta name="description" content="Compra de celulares reacondicionados y servicio técnico de celulares, PCs, notebooks y consolas. Envíos a todo Uruguay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --celeste: #1E5F8C;
+    --celeste-deep: #14425F;
+    --celeste-pale: #E4EFF6;
+    --crema: #FAF7F2;
+    --crema-2: #F2ECE1;
+    --mate: #C9A876;
+    --mate-dark: #9C7B4F;
+    --dorado: #D4972A;
+    --tinta: #1A2B3A;
+    --tinta-suave: #4A5A68;
+    --linea: rgba(26,43,58,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--crema);
+    color: var(--tinta);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--tinta);
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--linea);
+  }
+  nav.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .brand svg { width: 30px; height: 30px; }
+  .navlinks { display: flex; gap: 32px; font-size: 15px; font-weight: 500; }
+  .navlinks a { text-decoration: none; color: var(--tinta-suave); transition: color .2s; }
+  .navlinks a:hover { color: var(--celeste); }
+  .nav-cta {
+    background: var(--celeste);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background .2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--celeste-deep); }
+  .navtoggle { display: none; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: var(--celeste);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 48px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    background: rgba(255,255,255,0.1);
+    padding: 7px 14px;
+    border-radius: 100px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: 46px;
+    line-height: 1.12;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--dorado); }
+  .hero p.lead {
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    max-width: 46ch;
+    margin-bottom: 32px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--dorado);
+    color: var(--tinta);
+    padding: 14px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform .15s, background .2s;
+  }
+  .btn-primary:hover { background: #E5A53C; transform: translateY(-1px); }
+  .btn-ghost {
+    border: 1.5px solid rgba(255,255,255,0.35);
+    color: #fff;
+    padding: 14px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+
+  .hero-mate { display: flex; justify-content: center; align-items: center; }
+  .hero-mate svg { width: 100%; max-width: 280px; }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    padding: 26px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    margin-top: 12px;
+  }
+  .hero-stats .stat-num { font-family: 'Fraunces', serif; font-size: 28px; color: var(--dorado); }
+  .hero-stats .stat-label { font-size: 13px; color: rgba(255,255,255,0.7); }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section { padding: 88px 0; }
+  .section-alt { background: var(--crema-2); }
+  .section-head { max-width: 56ch; margin-bottom: 48px; }
+  .section-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mate-dark);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-head h2 { font-size: 34px; margin-bottom: 14px; }
+  .section-head p { font-size: 16.5px; color: var(--tinta-suave); }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--linea);
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+  }
+  .trust-item {
+    background: var(--crema);
+    padding: 26px 24px;
+    text-align: center;
+  }
+  .trust-item .ti-num { font-family: 'Fraunces', serif; font-size: 22px; color: var(--celeste); }
+  .trust-item .ti-label { font-size: 13px; color: var(--tinta-suave); margin-top: 4px; }
+
+  /* ---------- PRODUCTS ---------- */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .product-card {
+    background: #fff;
+    border: 1px solid var(--linea);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow .25s, transform .25s;
+  }
+  .product-card:hover { box-shadow: 0 16px 40px rgba(26,43,58,0.1); transform: translateY(-3px); }
+  .product-photo {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--celeste-pale);
+    position: relative;
+  }
+  .product-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .product-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--celeste);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+  .product-body { padding: 26px; }
+  .product-body h3 { font-size: 21px; margin-bottom: 4px; }
+  .product-sub { font-size: 14px; color: var(--tinta-suave); margin-bottom: 16px; }
+  .spec-list { list-style: none; margin-bottom: 18px; }
+  .spec-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+  .spec-list li:last-child { border-bottom: none; }
+  .spec-list .spec-label { color: var(--tinta-suave); }
+  .spec-list .spec-val { font-weight: 600; }
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-top: 4px;
+  }
+  .price { font-family: 'Fraunces', serif; font-size: 30px; color: var(--celeste-deep); }
+  .price-cur { font-size: 14px; color: var(--tinta-suave); font-family: 'Inter', sans-serif; }
+  .btn-product {
+    width: 100%;
+    background: var(--celeste);
+    color: #fff;
+    text-align: center;
+    padding: 13px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background .2s;
+  }
+  .btn-product:hover { background: var(--celeste-deep); }
+
+  /* ---------- WHY REACONDICIONADO ---------- */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 44px;
+  }
+  .why-card { padding: 4px; }
+  .why-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--celeste-pale);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .why-icon svg { width: 22px; height: 22px; stroke: var(--celeste); }
+  .why-card h3 { font-size: 18px; margin-bottom: 8px; }
+  .why-card p { font-size: 14.5px; color: var(--tinta-suave); }
+
+  /* ---------- SERVICE ---------- */
+  .service-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .device-list { display: flex; flex-direction: column; gap: 14px; }
+  .device-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid var(--linea);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .device-icon {
+    width: 42px; height: 42px;
+    border-radius: 9px;
+    background: var(--crema-2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .device-icon svg { width: 22px; height: 22px; stroke: var(--mate-dark); }
+  .device-item h4 { font-size: 15.5px; margin-bottom: 2px; }
+  .device-item p { font-size: 13px; color: var(--tinta-suave); }
+
+  .service-panel {
+    background: var(--celeste-deep);
+    color: #fff;
+    border-radius: 18px;
+    padding: 40px;
+  }
+  .service-panel h3 { color: #fff; font-size: 24px; margin-bottom: 14px; }
+  .service-panel > p { color: rgba(255,255,255,0.78); font-size: 15.5px; margin-bottom: 28px; }
+  .service-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px; }
+  .service-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .service-list svg { width: 18px; height: 18px; stroke: var(--dorado); flex-shrink: 0; margin-top: 2px; }
+  .service-note {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 26px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .about-quote {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--tinta);
+    margin-bottom: 24px;
+  }
+  .about-quote em { font-style: italic; color: var(--celeste); }
+  .about-layout p.body-p { font-size: 15.5px; color: var(--tinta-suave); margin-bottom: 16px; }
+  .about-mate-wrap {
+    background: var(--celeste);
+    border-radius: 20px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  .about-mate-wrap svg { width: 100%; max-width: 220px; }
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band {
+    background: var(--mate);
+    padding: 64px 0;
+    text-align: center;
+  }
+  .cta-band h2 { font-size: 30px; margin-bottom: 14px; color: var(--tinta); }
+  .cta-band p { font-size: 16px; color: rgba(26,43,58,0.75); margin-bottom: 28px; }
+  .cta-band .btn-primary { background: var(--celeste-deep); color: #fff; }
+  .cta-band .btn-primary:hover { background: var(--celeste); }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--tinta); color: rgba(255,255,255,0.7); padding: 56px 0 28px; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 24px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-size: 19px; color: #fff; margin-bottom: 14px; }
+  .footer-brand svg { width: 26px; height: 26px; }
+  .footer-grid p { font-size: 14px; max-width: 32ch; }
+  .footer-col h5 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 14.5px; color: rgba(255,255,255,0.78); text-decoration: none; }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.45); flex-wrap: wrap; gap: 10px; }
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #25D366;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    z-index: 60;
+    text-decoration: none;
+    transition: transform .2s;
+  }
+  .wa-float:hover { transform: scale(1.07); }
+  .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 880px) {
+    .navlinks { display: none; }
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 56px; gap: 36px; }
+    .hero-mate { order: -1; }
+    .hero-mate svg { max-width: 190px; }
+    .hero h1 { font-size: 34px; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+    .trust { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 24px; }
+    .service-layout { grid-template-columns: 1fr; gap: 32px; }
+    .service-panel { padding: 30px 26px; }
+    .about-layout { grid-template-columns: 1fr; gap: 32px; }
+    .about-mate-wrap { max-width: 280px; margin: 0 auto; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .section { padding: 60px 0; }
+    .section-head h2 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 60 60" fill="none"><rect width="60" height="60" rx="14" fill="#1E5F8C"/><path d="M27 44 L23 24 Q22 16 30 15 L38 15 Q46 16 45 24 L41 44 Z" fill="#C9A876"/><rect x="22" y="29" width="20" height="3" fill="#1E5F8C" opacity="0.4"/><path d="M32 15 L32 8 L40 8" stroke="#C9A876" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+      ReMate Digital
+    </div>
+    <div class="navlinks">
+      <a href="#productos">Productos</a>
+      <a href="#servicio">Servicio técnico</a>
+      <a href="#nosotros">Nosotros</a>
+    </div>
+    <a class="nav-cta" href="https://wa.me/59896934060" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">★ Más de 10 años en Maldonado</span>
+      <h1>Tecnología reacondicionada,<br><em>con la garra de siempre.</em></h1>
+      <p class="lead">Comprá celulares reacondicionados con garantía real y mandá a reparar tu equipo desde cualquier punto del país. El mismo servicio de toda la vida, ahora para todo Uruguay.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#productos">
+          Ver catálogo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn-ghost" href="#servicio">Servicio técnico</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">+10</div><div class="stat-label">años de trayectoria</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-label">equipos testeados</div></div>
+        <div><div class="stat-num">19</div><div class="stat-label">departamentos con envío</div></div>
+      </div>
+    </div>
+    <div class="hero-mate">
+      <svg viewBox="0 0 220 280" fill="none">
+        <path d="M70 230 L56 110 Q53 80 84 78 L136 78 Q167 80 164 110 L150 230 Z" fill="#C9A876"/>
+        <rect x="54" y="138" width="112" height="14" fill="#1E5F8C" opacity="0.18"/>
+        <path d="M104 78 L104 38 L150 38" stroke="#C9A876" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <ellipse cx="110" cy="240" rx="46" ry="9" fill="#14425F" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-item"><div class="ti-num">+10 años</div><div class="ti-label">de experiencia comprobada</div></div>
+  <div class="trust-item"><div class="ti-num">Garantía</div><div class="ti-label">por escrito en cada venta</div></div>
+  <div class="trust-item"><div class="ti-num">Envíos</div><div class="ti-label">a todo el país</div></div>
+  <div class="trust-item"><div class="ti-num">Trato directo</div><div class="ti-label">por WhatsApp, sin vueltas</div></div>
+</div>
+
+<section class="section" id="productos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Catálogo</span>
+      <h2>Equipos reacondicionados, listos para usar</h2>
+      <p>Cada equipo pasa por revisión completa antes de salir: batería, pantalla, cámaras y funcionamiento general. Fotos reales, sin sorpresas.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-photo">
+          <span class="product-badge">Reacondicionado</span>
+          <img src="images/foto_iphone_11.jpg" alt="iPhone 14 Midnight reacondicionado, junto a su caja original">
+        </div>
+        <div class="product-body">
+          <h3>iPhone 14 128GB</h3>
+          <p class="product-sub">Color Midnight</p>
+          <ul class="spec-list">
+            <li><span class="spec-label">Batería</span><span class="spec-val">100%</span></li>
+            <li><span class="spec-label">Almacenamiento</span><span class="spec-val">128 GB</span></li>
+            <li><span class="spec-label">Estado estético</span><span class="spec-val">Mínimos detalles</span></li>
+          </ul>
+          <div class="price-row">
+            <span class="price">$27.000</span>
+            <span class="price-cur">pesos uruguayos</span>
+          </div>
+          <a class="btn-product" href="https://wa.me/59896934060?text=Hola!%20Quiero%20consultar%20por%20el%20iPhone%2014%20128GB%20reacondicionado" target="_blank" rel="noopener">
+            Consultar por este equipo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <span class="product-badge">Reacondicionado</span>
+          <img src="images/foto_s23_caja.jpg" alt="Samsung Galaxy S23 Ultra reacondicionado junto a su caja original">
+        </div>
+        <div class="product-body">
+          <h3>Samsung S23 Ultra 5G</h3>
+          <p class="product-sub">512GB · 12GB RAM</p>
+          <ul class="spec-list">
+            <li><span class="spec-label">Sistema</span><span class="spec-val">Android 16 (act. a 17)</span></li>
+            <li><span class="spec-label">Almacenamiento</span><span class="spec-val">512 GB</span></li>
+            <li><span class="spec-label">Estado estético</span><span class="spec-val">Detalle imperceptible en modo oscuro</span></li>
+          </ul>
+          <div class="price-row">
+            <span class="price">$27.900</span>
+            <span class="price-cur">pesos uruguayos</span>
+          </div>
+          <a class="btn-product" href="https://wa.me/59896934060?text=Hola!%20Quiero%20consultar%20por%20el%20Samsung%20S23%20Ultra%20reacondicionado" target="_blank" rel="noopener">
+            Consultar por este equipo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Revisión real, no de catálogo</h3>
+        <p>Probamos batería, pantalla, cámaras y conectividad antes de publicar cada equipo. Te mostramos el estado real con fotos propias.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/></svg></div>
+        <h3>Envío a todo el país</h3>
+        <p>Coordinamos el envío por la agencia que prefieras. Trazabilidad y seguimiento hasta que el equipo llegue a tus manos.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <h3>Más de 10 años de respaldo</h3>
+        <p>No somos un perfil nuevo vendiendo por unos meses. Trayectoria real en Maldonado, con clientes que vuelven.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="servicio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Servicio técnico</span>
+      <h2>Reparaciones para lo que ya tenés</h2>
+      <p>Celulares, computadoras, notebooks y consolas. Diagnóstico claro y presupuesto antes de tocar nada.</p>
+    </div>
+
+    <div class="service-layout">
+      <div class="device-list">
+        <div class="device-item">
+          <div class="device-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
+          <div><h4>Celulares</h4><p>Pantallas, baterías, conectores de carga y más</p></div>
+        </div>
+        <div class="device-item">
+          <div class="device-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div><h4>PCs de escritorio</h4><p>Mantenimiento, upgrades y reparación</p></div>
+        </div>
+        <div class="device-item">
+          <div class="device-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><polygon points="2,20 22,20 19,16 5,16"/></svg></div>
+          <div><h4>Notebooks y laptops</h4><p>Pantallas, teclados, baterías y limpieza interna</p></div>
+        </div>
+        <div class="device-item">
+          <div class="device-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="7" cy="12" r="1.4"/><circle cx="17" cy="10" r="1.2"/><circle cx="19" cy="13" r="1.2"/></svg></div>
+          <div><h4>Consolas de videojuegos</h4><p>Limpieza, HDMI, lectores y mantenimiento general</p></div>
+        </div>
+      </div>
+
+      <div class="service-panel">
+        <h3>¿Qué reparamos más seguido?</h3>
+        <p>Lo que más nos consultan, resuelto rápido y con repuesto de calidad.</p>
+        <ul class="service-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Cambio de pantallas, todos los modelos de iPhone y gama media/alta Android</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Cambio de batería cuando ya no te dura el día</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Conectores de carga, parlantes y micrófonos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Mantenimiento de PCs, notebooks y consolas</li>
+        </ul>
+        <div class="service-note">
+          ¿Querés saber el precio exacto para tu modelo de iPhone? Escribinos el modelo y te pasamos el presupuesto al toque.
+        </div>
+        <a class="btn-primary" style="width:100%; justify-content:center;" href="https://wa.me/59896934060?text=Hola!%20Quiero%20consultar%20por%20una%20reparaci%C3%B3n" target="_blank" rel="noopener">
+          Consultar precio de reparación
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="nosotros">
+  <div class="wrap">
+    <div class="about-layout">
+      <div>
+        <p class="about-quote">De arreglar celulares puerta a puerta en Maldonado, a <em>llegar a todo Uruguay</em> sin perder lo de siempre: trato directo y trabajo bien hecho.</p>
+        <p class="body-p">ReMate Digital nace de más de 10 años reparando y vendiendo tecnología en Maldonado, antes bajo el nombre Fixpcuy. El nombre cambió, pero el trabajo de fondo es el mismo: equipos revisados de verdad, trato cara a cara aunque sea por WhatsApp, y la voluntad de explicarte las cosas claro, sin tecnicismos innecesarios.</p>
+        <p class="body-p">Hoy damos el paso de salir de Maldonado para llegar a todo el país con envíos, manteniendo el mismo estándar de siempre en cada equipo que sale de acá.</p>
+      </div>
+      <div class="about-mate-wrap">
+        <svg viewBox="0 0 220 280" fill="none">
+          <path d="M70 230 L56 110 Q53 80 84 78 L136 78 Q167 80 164 110 L150 230 Z" fill="#FAF7F2"/>
+          <rect x="54" y="138" width="112" height="14" fill="#1E5F8C" opacity="0.5"/>
+          <path d="M104 78 L104 38 L150 38" stroke="#FAF7F2" stroke-width="7" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>¿Tenés un equipo para vender o reparar?</h2>
+    <p>Contanos qué necesitás y te respondemos directo por WhatsApp.</p>
+    <a class="btn-primary" href="https://wa.me/59896934060" target="_blank" rel="noopener">
+      Escribir ahora
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 60 60" fill="none"><rect width="60" height="60" rx="14" fill="#C9A876"/><path d="M27 44 L23 24 Q22 16 30 15 L38 15 Q46 16 45 24 L41 44 Z" fill="#1A2B3A"/><rect x="22" y="29" width="20" height="3" fill="#FAF7F2" opacity="0.5"/><path d="M32 15 L32 8 L40 8" stroke="#1A2B3A" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+          ReMate Digital
+        </div>
+        <p>Tecnología reacondicionada y servicio técnico con más de 10 años de trayectoria en Maldonado, ahora para todo Uruguay.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#servicio">Servicio técnico</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="https://wa.me/59896934060" target="_blank" rel="noopener">WhatsApp: 096 934 060</a></li>
+          <li><a href="mailto:rematedigitaluy@gmail.com">rematedigitaluy@gmail.com</a></li>
+          <li>Maldonado, Uruguay</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ReMate Digital. Antes Fixpcuy.</span>
+      <span>Hecho en Uruguay 🧉</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/59896934060" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.02 4a8.94 8.94 0 0 0-8.94 8.94c0 1.58.41 3.12 1.2 4.47L3 21l3.7-1.21a8.93 8.93 0 0 0 5.32 1.72h0a8.94 8.94 0 0 0 8.94-8.94 8.88 8.88 0 0 0-2.36-6.25zM12.02 19.9h0a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.92.94-2.74-.18-.28a7.42 7.42 0 0 1-1.14-3.96 7.45 7.45 0 0 1 7.45-7.44c1.99 0 3.85.78 5.26 2.18a7.39 7.39 0 0 1 2.18 5.26 7.45 7.45 0 0 1-7.44 7.45zm4.08-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.07-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.59-1.11-1.32-1.24-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.78.77-.78 1.86 0 1.1.8 2.16.91 2.31.11.15 1.57 2.4 3.8 3.36.53.23.94.37 1.27.47.53.17 1.01.14 1.39.09.42-.06 1.32-.54 1.5-1.06.19-.52.19-.96.13-1.06-.06-.1-.2-.15-.42-.26z"/></svg>
+</a>
+
+</body>
+</html>
