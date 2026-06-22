@@ -423,6 +423,48 @@
   .wa-float:hover { transform: scale(1.07); }
   .wa-float svg { width: 28px; height: 28px; fill: #fff; }
 
+  /* ---------- FAQ ---------- */
+  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid var(--linea);
+  }
+  .faq-item:first-child { border-top: 1px solid var(--linea); }
+  .faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 4px;
+    cursor: pointer;
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--tinta);
+    list-style: none;
+    transition: color .2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--celeste); }
+  .faq-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--celeste-pale);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background .2s, transform .25s;
+  }
+  .faq-icon svg { width: 14px; height: 14px; stroke: var(--celeste); transition: transform .25s; }
+  details[open] .faq-icon { background: var(--celeste); }
+  details[open] .faq-icon svg { stroke: #fff; transform: rotate(45deg); }
+  .faq-body {
+    padding: 0 4px 22px;
+    font-size: 15.5px;
+    color: var(--tinta-suave);
+    line-height: 1.65;
+    max-width: 64ch;
+  }
+  .faq-body a { color: var(--celeste); text-decoration: underline; text-decoration-thickness: 1px; }
+
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 880px) {
     .navlinks { display: none; }
@@ -456,8 +498,8 @@
       <a href="#productos">Productos</a>
       <a href="#servicio">Servicio técnico</a>
       <a href="#nosotros">Nosotros</a>
-    </div>
-    <a class="nav-cta" href="https://wa.me/59896934060" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a href="#faq">Preguntas frecuentes</a>
+    </div> href="https://wa.me/59896934060" target="_blank" rel="noopener">Escribir por WhatsApp</a>
   </nav>
 </header>
 
@@ -646,6 +688,68 @@
   </div>
 </section>
 
+<section class="section section-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head" style="margin: 0 auto 48px; text-align: center; max-width: 56ch;">
+      <span class="section-eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que más nos consultan</h2>
+      <p>Respuestas directas a las dudas más comunes sobre compra, envío y reparación.</p>
+    </div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>
+          ¿Qué significa que un equipo sea "reacondicionado"?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="faq-body">Un equipo reacondicionado es un celular de segunda mano que pasó por revisión técnica completa: se probó batería, pantalla, cámaras, conectividad y funcionamiento general. Si algo no estaba bien, se reparó antes de publicarlo. No es nuevo de caja, pero tampoco es "usado y ya" — es un equipo que revisamos nosotros y del que respondemos.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          ¿Los equipos tienen garantía?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="faq-body">Sí. Todos los equipos que vendemos tienen garantía por escrito, que cubre fallas de funcionamiento no causadas por el comprador. Si algo falla después de la compra, lo resolvemos. El plazo y las condiciones exactas te las detallamos al momento de la venta.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          ¿Hacen envíos a todo Uruguay?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="faq-body">Sí, enviamos a los 19 departamentos. Coordinamos el envío por la agencia de tu preferencia — OCA, Correo Uruguayo u otras — y te pasamos el número de seguimiento para que puedas rastrear el paquete hasta que llegue a tus manos.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          ¿Cómo funciona el proceso de compra?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="faq-body">Todo pasa por WhatsApp. Nos escribís indicando el equipo que te interesa, te pasamos más fotos si las necesitás, acordamos la forma de pago y coordinamos el envío o retiro. Sin formularios complicados ni cuentas que crear — trato directo de principio a fin.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          ¿Cómo mando mi equipo a reparar si no estoy en Maldonado?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="faq-body">Nos escribís por WhatsApp con una descripción del problema y el modelo del equipo. Te damos un diagnóstico orientativo y te explicamos cómo enviárnoslo. Una vez que lo recibimos, te pasamos el presupuesto antes de tocar nada, y vos decidís si seguimos o te lo devolvemos.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          ¿Hacen presupuesto sin compromiso?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="faq-body">Sí. En todos los trabajos de reparación hacemos diagnóstico y te pasamos el precio antes de empezar. Si el presupuesto no te convence, no hay problema — no cobramos el diagnóstico en la mayoría de los casos. Preguntanos antes de enviar el equipo para coordinar bien.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <div class="cta-band">
   <div class="wrap">
     <h2>¿Tenés un equipo para vender o reparar?</h2>
@@ -672,6 +776,7 @@
         <ul>
           <li><a href="#productos">Productos</a></li>
           <li><a href="#servicio">Servicio técnico</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
         </ul>
       </div>
